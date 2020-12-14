@@ -1,0 +1,11 @@
+server-dist
+client-dist
+.github
+coverage
+docs
+plan
+.circleci
+.travis.yml
+.cache
+codecov.yml
+

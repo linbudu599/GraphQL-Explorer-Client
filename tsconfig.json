@@ -1,0 +1,35 @@
+{
+  // use in server code only for now
+  "include": ["./src/**/*.ts"],
+  "compilerOptions": {
+    // required by TypeGraphQL
+    "lib": ["esnext.asynciterable", "ES2018"],
+    "target": "ES2018",
+    "module": "commonjs",
+    "allowJs": true,
+    "checkJs": true,
+    "jsx": "react",
+    "declaration": true,
+    "declarationMap": false,
+    "sourceMap": false,
+    "removeComments": false,
+    "isolatedModules": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": false,
+    "inlineSourceMap": false,
+    "baseUrl": "./",
+    "noUnusedParameters": false,
+    "noImplicitReturns": false,
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}

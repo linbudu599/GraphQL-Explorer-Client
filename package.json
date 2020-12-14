@@ -1,0 +1,71 @@
+{
+  "name": "GraphQL-Explorer-Client",
+  "version": "1.0.0",
+  "description": "UNDER_DEVELOPING",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development parcel ./public/index.html  --port 5999",
+    "test": "cross-env NODE_ENV=test jest --forceExit",
+    "build": "rimraf -rf dist &&  cross-env NODE_ENV=production parcel build ./public/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linbudu599/GraphQL-Explorer-Client.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/linbudu599/GraphQL-Explorer-Client/issues"
+  },
+  "homepage": "https://github.com/linbudu599/GraphQL-Explorer-Client#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-transform-runtime": "^7.12.10",
+    "@babel/preset-env": "^7.12.10",
+    "@babel/preset-react": "^7.12.10",
+    "@babel/preset-typescript": "^7.12.7",
+    "@babel/runtime": "^7.12.5",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@ice/spec": "^1.0.1",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/jest": "^26.0.19",
+    "@types/node": "^14.14.13",
+    "@types/react": "^17.0.0",
+    "@types/react-dom": "^17.0.0",
+    "babel-jest": "^26.6.3",
+    "chalk": "^4.1.0",
+    "commitizen": "^4.2.2",
+    "commitlint-config-cz": "^0.13.2",
+    "cross-env": "^7.0.3",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^6.3.0",
+    "dotenv": "^8.2.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "husky": "^4.3.6",
+    "jest": "^26.6.3",
+    "jest-enzyme": "^7.1.2",
+    "nodemon": "^2.0.6",
+    "prettier": "^2.2.1",
+    "react-test-renderer": "^17.0.1",
+    "serve": "^11.3.2",
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.1.1"
+  },
+  "dependencies": {
+    "@apollo/client": "^3.3.4",
+    "apollo-client": "^2.6.10",
+    "graphql": "^15.4.0",
+    "graphql-scalars": "^1.6.1",
+    "parcel-bundler": "^1.12.4",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "type-graphql": "^1.1.1",
+    "typedi": "^0.8.0",
+    "typescript": "^4.1.3"
+  }
+}
