@@ -1,27 +1,24 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import {
+  ApolloProvider,
+  InMemoryCache,
+  ApolloClient,
+  useQuery,
+  gql,
+} from "@apollo/client";
 
-import { ApolloProvider, useQuery } from "@apollo/client";
-
-import createApolloClient, {
-  IS_LOGGED_IN,
-  ICheckLoginedIn,
-} from "./apollo/client";
+const client = new ApolloClient({
+  uri: "http://localhost:4000/graphql",
+  cache: new InMemoryCache(),
+});
 
 import App from "./App";
-import UnLoginPage from "./pages/unlogin";
-
-const Entry: React.FC = () => {
-  const { data } = useQuery(IS_LOGGED_IN) as ICheckLoginedIn;
-  return data.isLoggedIn ? <App /> : <UnLoginPage />;
-};
-
-const client = createApolloClient();
 
 ReactDOM.render(
-  // <ApolloProvider client={client}>
-  //   <Entry />
-  // </ApolloProvider>,
-  <App />,
+  <ApolloProvider client={client}>
+    <App />
+  </ApolloProvider>,
+
   document.getElementById("root")
 );

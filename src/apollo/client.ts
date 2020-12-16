@@ -1,6 +1,4 @@
 import { InMemoryCache, ApolloClient, gql, Resolvers } from "@apollo/client";
-import { buildTypeDefsAndResolvers } from "type-graphql";
-import { createUploadLink } from "apollo-upload-client";
 import CounterResolver from "../local/Counter/counter.resolver";
 
 export const IS_LOGGED_IN = gql`
@@ -16,11 +14,6 @@ export interface ICheckLoginedIn {
 }
 
 export default function createApolloClient() {
-  // const { typeDefs, resolvers } = await buildTypeDefsAndResolvers({
-  //   resolvers: [CounterResolver],
-  //   skipCheck: true, // allow for schema without queries
-  // });
-
   // TODO: explore cache control
   const cache = new InMemoryCache({
     // __typename added
@@ -31,10 +24,9 @@ export default function createApolloClient() {
 
   const client = new ApolloClient({
     cache,
-    uri: "http://localhost:4000/graphql",
+    uri: "https://graphql-faas.linbudu599.vercel.app/api/migrate",
     headers: {
-      // @ts-ignore
-      authorization: localStorage.getItem("token") || "",
+      // authorization: localStorage.getItem("token") || "",
       "client-name": "GraphQL-Explorer [Client]",
       "client-version": "0.1.0",
     },
