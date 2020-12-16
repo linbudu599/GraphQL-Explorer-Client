@@ -18,15 +18,15 @@ interface ISubstanceItem {
 }
 
 const App = () => {
-  const { loading, error, data } = useQuery(QUERY_SUBSTANCE);
+  // const { loading, error, data } = useQuery<{ QueryAllSubstances: ISubstanceItem }>(QUERY_SUBSTANCE);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error...</p>;
+  // if (loading) return <p>Loading...</p>;
+  // if (error) return <p>Error...</p>;
 
   return (
     <>
       <h2>UNDER_DEVELOPING</h2>
-      {(data.QueryAllSubstances as ISubstanceItem[]).map(
+      {/* {data.map(
         ({ substanceId, substanceName }) => {
           return (
             <p key={substanceId}>
@@ -34,7 +34,7 @@ const App = () => {
             </p>
           );
         }
-      )}
+      )} */}
     </>
   );
 };

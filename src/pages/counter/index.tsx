@@ -1,7 +1,7 @@
-import React from 'react';
-import { gql, useQuery, NetworkStatus, useMutation } from '@apollo/client';
+import React from "react";
+import { gql, useQuery, useMutation } from "@apollo/client";
 
-import CounterType from '../../local/Counter/counter.type';
+import CounterType from "../../local/Counter/counter.type";
 
 // Apollo Local State Management
 const Counter: React.FC = () => {
@@ -12,7 +12,9 @@ const Counter: React.FC = () => {
       }
     }
   `);
+
   console.log(data);
+
   const [increment] = useMutation<() => void>(gql`
     mutation {
       incrementCounter @client
@@ -28,9 +30,14 @@ const Counter: React.FC = () => {
   return (
     <>
       <h1>Counter:</h1>
-      {/* <h2>{loading ? 'Loading...' : data!.counter.value}</h2> */}
-      <button onClick={() => increment()}>Increment</button>;
-      <button onClick={() => decrement()}>Decrement</button>;
+      {/* <h2>{loading ? "Loading..." : data!.counter.value}</h2> */}
+      <button onClick={() => increment()}>
+        <b>COUNT+</b>
+      </button>
+      <br />
+      <button onClick={() => decrement()}>
+        <b>COUNT-</b>
+      </button>
     </>
   );
 };

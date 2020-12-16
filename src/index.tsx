@@ -1,24 +1,22 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import {
-  ApolloProvider,
-  InMemoryCache,
-  ApolloClient,
-  useQuery,
-  gql,
-} from "@apollo/client";
+import createApolloClient from "./apollo/client";
+import { ApolloProvider } from "@apollo/client";
 
-const client = new ApolloClient({
-  uri: "http://localhost:4000/graphql",
-  cache: new InMemoryCache(),
-});
+import Counter from "./pages/counter";
 
 import App from "./App";
 
-ReactDOM.render(
-  <ApolloProvider client={client}>
-    <App />
-  </ApolloProvider>,
+async function bootstrap() {
+  const client = await createApolloClient();
+  ReactDOM.render(
+    <ApolloProvider client={client}>
+      {/* <App /> */}
+      <Counter />
+    </ApolloProvider>,
 
-  document.getElementById("root")
-);
+    document.getElementById("root")!
+  );
+}
+
+bootstrap();
