@@ -33,7 +33,6 @@
     "@testing-library/react": "^11.2.2",
     "@types/enzyme-adapter-react-16": "^1.0.6",
     "@types/jest": "^26.0.19",
-    "@types/node": "^14.14.13",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "babel-jest": "^26.6.3",
