@@ -1,5 +1,9 @@
-import { InMemoryCache, ApolloClient, gql, Resolvers } from "@apollo/client";
-import CounterResolver from "../local/Counter/counter.resolver";
+import {
+  InMemoryCache,
+  ApolloClient,
+  gql,
+  createHttpLink,
+} from "@apollo/client";
 
 export const IS_LOGGED_IN = gql`
   query IsUserLoggedIn {
@@ -7,24 +11,26 @@ export const IS_LOGGED_IN = gql`
   }
 `;
 
-export interface ICheckLoginedIn {
-  data: {
-    isLoggedIn: boolean;
-  };
-}
+export const IS_LOGGED_IN_MUTATION = gql`
+  mutation IsUserLoggedIn {
+    isLoggedIn @client
+  }
+`;
 
 export default function createApolloClient() {
   // TODO: explore cache control
   const cache = new InMemoryCache({
-    // __typename added
     addTypename: true,
-    // use === to compare query result & cache
     resultCaching: true,
+  });
+
+  const link = createHttpLink({
+    uri: "http://localhost:4000/graphql",
   });
 
   const client = new ApolloClient({
     cache,
-    uri: "https://graphql-faas.linbudu599.vercel.app/api/migrate",
+    link,
     headers: {
       // authorization: localStorage.getItem("token") || "",
       "client-name": "GraphQL-Explorer [Client]",
