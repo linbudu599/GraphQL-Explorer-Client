@@ -1,9 +1,4 @@
-import {
-  InMemoryCache,
-  ApolloClient,
-  gql,
-  createHttpLink,
-} from "@apollo/client";
+import { InMemoryCache, ApolloClient, gql, createHttpLink } from '@apollo/client';
 
 export const IS_LOGGED_IN = gql`
   query IsUserLoggedIn {
@@ -25,7 +20,7 @@ export default function createApolloClient() {
   });
 
   const link = createHttpLink({
-    uri: "http://localhost:4000/graphql",
+    uri: 'http://localhost:4000/graphql',
   });
 
   const client = new ApolloClient({
@@ -33,15 +28,14 @@ export default function createApolloClient() {
     link,
     headers: {
       // authorization: localStorage.getItem("token") || "",
-      "client-name": "GraphQL-Explorer [Client]",
-      "client-version": "0.1.0",
+      'client-name': 'GraphQL-Explorer [Client]',
+      'client-version': '0.1.0',
     },
   });
 
   cache.writeQuery({
     query: IS_LOGGED_IN,
     data: {
-      // TODO: check is token valid by request
       // isLoggedIn: !!localStorage.getItem('token'),
       isLoggedIn: true,
     },

@@ -2,9 +2,9 @@ name: GraphQL-Explorer-Client
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   client-job:
@@ -27,8 +27,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: Install Dependencies
-      #   run: npm install
-      # - name: Client Tests
+        #   run: npm install
+        # - name: Client Tests
         run: npm run test
       - name: Client Build
         run: npm run build

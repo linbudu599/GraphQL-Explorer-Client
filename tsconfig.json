@@ -1,35 +1,48 @@
 {
-  // use in server code only for now
-  "include": ["./src/**/*.ts"],
   "compilerOptions": {
-    // required by TypeGraphQL
-    "lib": ["esnext.asynciterable", "ES2018"],
-    "target": "ES2018",
-    "module": "commonjs",
-    "allowJs": true,
-    "checkJs": true,
-    "jsx": "react",
-    "declaration": true,
-    "declarationMap": false,
-    "sourceMap": false,
-    "removeComments": false,
-    "isolatedModules": true,
-    "strict": true,
+    "outDir": "build/dist",
+    "module": "esnext",
+    "target": "esnext",
+    "lib": ["esnext", "dom", "ES2018"],
+    "sourceMap": true,
+    "baseUrl": ".",
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "forceConsistentCasingInFileNames": true,
+    "suppressImplicitAnyIndexErrors": true,
     "noImplicitAny": false,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
     "alwaysStrict": true,
     "noUnusedLocals": false,
     "inlineSourceMap": false,
-    "baseUrl": "./",
+    "allowJs": true,
+    "skipLibCheck": true,
+    "removeComments": false,
     "noUnusedParameters": false,
-    "noImplicitReturns": false,
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
+    "noImplicitReturns": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
-  }
+    "strict": true,
+    "paths": {
+      "@/*": ["./src/*"],
+      "@@/*": ["./src/.umi/*"]
+    }
+  },
+  "include": [
+    "mock/**/*",
+    "src/**/*",
+    "tests/**/*",
+    "test/**/*",
+    "__test__/**/*",
+    "typings/**/*",
+    "config/**/*",
+    ".eslintrc.js",
+    ".stylelintrc.js",
+    ".prettierrc.js",
+    "jest.config.ts",
+    "mock/*"
+  ],
+  "exclude": ["node_modules", "build", "dist", "scripts", "src/.umi/*", "webpack", "jest"]
 }
