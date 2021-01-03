@@ -1,6 +1,5 @@
-const { prettier } = require("@ice/spec");
+const fabric = require('@umijs/fabric');
 
 module.exports = {
-  ...prettier,
-  singleQuote: false,
+  ...fabric.prettier,
 };
