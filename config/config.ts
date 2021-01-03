@@ -1,5 +1,6 @@
 // https://umijs.org/config/
 import { defineConfig } from 'umi';
+import AntdDayjsWebpackPlugin from 'antd-dayjs-webpack-plugin';
 import defaultSettings from './defaultSettings';
 import proxy from './proxy';
 import routes from './routes';
@@ -11,6 +12,9 @@ export default defineConfig({
   antd: {},
   dva: {
     hmr: true,
+  },
+  chainWebpack(memo) {
+    memo.plugin('antdDayJSReplace').use(AntdDayjsWebpackPlugin);
   },
   layout: {
     name: 'Ant Design Pro',
@@ -28,9 +32,6 @@ export default defineConfig({
   dynamicImport: {
     loading: '@ant-design/pro-layout/es/PageLoading',
   },
-  targets: {
-    ie: 11,
-  },
   // umi routes: https://umijs.org/docs/routing
   routes,
   // Theme for antd: https://ant.design/docs/react/customize-theme-cn
@@ -38,7 +39,7 @@ export default defineConfig({
     'primary-color': defaultSettings.primaryColor,
   },
   esbuild: {},
-  title: false,
+  title: 'GraphQL-Explorer-Client',
   ignoreMomentLocale: true,
   proxy: proxy[REACT_APP_ENV || 'dev'],
   manifest: {

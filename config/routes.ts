@@ -47,7 +47,7 @@ export default [
     redirect: '/welcome',
   },
   {
-    name: '空白页面',
+    name: 'Apollo',
     icon: 'smile',
     path: '/apollo',
     component: './Apollo',

@@ -20,7 +20,7 @@ export default function createApolloClient() {
   });
 
   const link = createHttpLink({
-    uri: 'http://localhost:4000/graphql',
+    uri: 'http://47.97.183.158:4399/graphql',
   });
 
   const client = new ApolloClient({
