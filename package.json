@@ -30,7 +30,8 @@
     "test": "umi test",
     "test:all": "node ./tests/run-tests.js",
     "test:component": "umi test ./src/components",
-    "tsc": "tsc --noEmit"
+    "tsc": "tsc --noEmit",
+    "commit": "git add -A && git-cz"
   },
   "lint-staged": {
     "**/*.less": "stylelint --syntax less",
@@ -38,6 +39,17 @@
     "**/*.{js,jsx,tsx,ts,less,md,json}": [
       "prettier --write"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
   },
   "browserslist": [
     "> 1%",
@@ -114,6 +126,7 @@
     "lint-staged": "^10.0.0",
     "mockjs": "^1.0.1-beta3",
     "prettier": "^2.0.1",
+    "pretty-quick": "^3.1.0",
     "pro-download": "1.0.1",
     "puppeteer-core": "^5.0.0",
     "react-test-renderer": "^17.0.1",
