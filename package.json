@@ -63,7 +63,7 @@
     "@ant-design/pro-layout": "^6.9.0",
     "@ant-design/pro-table": "^2.17.0",
     "@apollo/client": "^3.3.6",
-    "@umijs/route-utils": "^1.0.33",
+    "@umijs/route-utils": "^2.2.1",
     "antd": "^4.9.4",
     "classnames": "^2.2.6",
     "graphql": "^15.4.0",
